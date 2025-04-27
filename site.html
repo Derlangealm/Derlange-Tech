@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Derlange Tech - Serviços de Informática</title>
+  <meta name="description" content="Serviços de informática com qualidade e confiança. Formatação de notebooks, desbloqueio de senha, limpeza de gabinete, instalação de softwares e muito mais.">
+  <meta name="author" content="Derlange Tech">
+  <style>
+    /* Estilo geral */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#f0f0f0, #d9e2ec);
+      background-image: url('https://wallpapers.com/images/featured/imagens-de-tech-ejalk6y84bkmooii.webp');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    header h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease;
+    }
+
+    header p {
+      font-size: 20px;
+      margin-top: 0;
+      animation: fadeIn 2.5s ease;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0077cc;
+      color: white;
+      padding: 15px;
+      margin: 10px 0;
+      text-decoration: none;
+      font-size: 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    .button:hover {
+      background-color: #005fa3;
+      transform: scale(1.05);
+    }
+
+    .button i {
+      margin-right: 10px;
+      font-size: 24px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .services {
+      /* Removido o fundo azul royal */
+      background-color: transparent; /* Fundo transparente */
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+      animation: fadeInUp 1s ease;
+    }
+
+    /* Popup */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      color: #333;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .popup-content button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup-content button:hover {
+      background-color: #005fa3;
+    }
+
+    /* Botão flutuante */
+    .whatsapp-button, .instagram-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 24px;
+      text-decoration: none;
+      z-index: 1001;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      transition: background-color 0.3s;
+    }
+
+    .instagram-button {
+      right: 80px;
+      background-color: #E1306C;
+    }
+
+    .whatsapp-button:hover, .instagram-button:hover {
+      background-color: #128C7E;
+    }
+
+    /* Animações */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+  </style>
+
+  <!-- Link dos ícones -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Derlange Tech</h1>
+    <p>Cuide bem dos seus equipamentos! Manter seus dispositivos em dia evita perdas e aumenta a produtividade!</p>
+  </header>
+
+  <div class="container">
+    <div class="services">
+      <h2>Serviços Disponíveis</h2>
+
+      <a class="button" onclick="showPopup('Formatação de Notebook', 'Preço varia entre R$ 100,00 e R$ 150,00. Depende do sistema operacional, complexidade de backup e reinstalação de drivers.')"><i class="fas fa-laptop"></i>Formatação de Notebook - R$ 80,00</a>
+
+      <a class="button" onclick="showPopup('Desbloqueio de Senha', 'Preço varia entre R$ 70,00 e R$ 100,00. Depende do tipo de senha (BIOS, Windows, conta Microsoft).')"><i class="fas fa-key"></i>Desbloqueio de Senha - R$ 70,00</a>
+
+      <a class="button" onclick="showPopup('Limpeza de Gabinete', 'Preço varia entre R$ 50,00 e R$ 80,00. Depende do grau de sujeira, necessidade de troca de pasta térmica e desmontagem.')"><i class="fas fa-broom"></i>Limpeza de Gabinete - R$ 50,00</a>
+
+      <a class="button" onclick="showPopup('Instalação de Pacote Office', 'Preço varia entre R$ 60,00 e R$ 120,00. Depende da versão e ativação da licença.')"><i class="fas fa-file-alt"></i>Instalação de Pacote Office - R$ 60,00</a>
+
+      <h2>Promoção Especial!</h2>
+      <p>Clientes que realizarem 2 ou mais serviços ganham brindes exclusivos: Mousepad personalizado ou suporte de celular!</p>
+      <a class="button" onclick="showPopup('Promoção de Brindes', 'Ao contratar 2 ou mais serviços, você ganha um brinde exclusivo!')"><i class="fas fa-gift"></i>Brindes para Clientes Fieis</a>
+
+      <h2>Outros Serviços</h2>
+      <a class="button" onclick="showPopup('Impressão de documentos', 'Impressão a partir de R$ 1,00 por página. Valores podem variar conforme quantidade e tipo de impressão.')"><i class="fas fa-print"></i>Impressão de documentos e boletos - a partir de R$ 1,00</a>
+
+      <a class="button" onclick="showPopup('Emissão de documentos', 'Emissão de segunda via de documentos a partir de R$ 15,00. Varia conforme o órgão emissor.')"><i class="fas fa-id-card"></i>Emissão de documentos e 2ª via - a partir de R$ 15,00</a>
+    </div>
+
+    <div class="services">
+      <h2>Antes e Depois (Exemplos de Serviços)</h2>
+      <p>Em breve, exemplos reais de formatações, limpezas de gabinete e restaurações de sistema!</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Atendimento em: Rua Padre Abath, 232, próximo ao Big Seleto</p>
+    <p>©️ 2025 Derlange Tech - Técnica em Informática</p>
+    <p><strong>Sobre Mim:</strong> Técnica em informática desde 2018, formada pela instituição profissionalizante Balbina Viana Arrais. Após 5 anos fora do ramo, continuo me atualizando constantemente para melhor atender meus clientes.</p>
+  </footer>
+
+  <!-- Popup -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-content">
+      <h2 id="popup-title"></h2>
+      <p id="popup-text"></p>
+      <button onclick="closePopup()">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Script para o Popup -->
+  <script>
+    function showPopup(title, text) {
+      document.getElementById('popup-title').innerText = title;
+      document.getElementById('popup-text').innerText = text;
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
+<!-- Botões Flutuantes -->
+<a class="whatsapp-button" href="https://wa.me/5588981481306" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:50px; height:50px;">
+</a>
+
+<a class="instagram-button" href="https://instagram.com/derlangee_" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width:50px; height:50px;">
+</a>
